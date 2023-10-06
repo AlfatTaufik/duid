@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video Section</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* Styling untuk section */
+        .background-video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+
+        /* Styling untuk video latar belakang */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Styling untuk teks */
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .title {
+            font-family: 'Blanka', sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Styling untuk tombol */
+        .button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <section class="background-video-section">
+        <!-- Video latar belakang -->
+        <video class="background-video" autoplay muted loop>
+            <!-- <source src="./video/bgVideo.mp4" type="video/mp4"> -->
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Teks -->
+        <div class="text-container">
+            <h1 class="title">One Problem With Many Solution</h1>
+            <h2 class="subtitle">Bekerjasama Dengan Kecerdasan Buatan dalam Memajukan Masa Depan</h2>
+            <a href="#" class="button">Get In Touch</a>
+        </div>
+    </section>
+</body>
+</html>

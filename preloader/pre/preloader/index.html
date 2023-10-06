@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preloader</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,500&family=Montserrat:wght@900&family=Paytone+One&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/* section { */
+    /* padding: 100px; */
+    /* background-color: #070707; */
+/* } */
+section h2 {
+    font-size: 4em;
+    color: #4b656d;
+
+}
+section h2 span {
+    display: block;
+    font-size: 0.5em;
+    color: #ff4983;
+}
+section p {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+h1 {
+  padding: 50px 0;
+  font-size: 45px;
+  text-align: center;
+  color: rgb(54, 56, 55);
+}
+:active, :hover, :focus {
+  outline: 0!important;
+  outline-offset: 0;
+}
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+.btn-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 10px auto 35px;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  width: auto; height: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0px 25px 15px;
+  min-width: 150px;
+}
+  .btn span {         
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    transition: 0.3s;
+  }
+
+  /*--- btn-3 ---*/
+.btn-3 {
+  padding: 5px;
+}
+.btn-3 span {
+  color: rgb(255, 255, 255);
+  background-color: rgb(54, 56, 55);
+}
+.btn-3::before,
+.btn-3::after {
+  background: transparent;
+  z-index: 2;
+}
+
+/* 12. hover-border-2 */
+.btn.hover-border-2::before,
+.btn.hover-border-2::after {
+  width: 10%; height: 25%;
+  transition: 0.35s;
+}
+.btn.hover-border-2::before {
+  bottom: 0; left: 0;
+  border-left: 1px solid rgb(28, 31, 30);
+  border-bottom: 1px solid rgb(28, 31, 30);
+}
+.btn.hover-border-2::after {
+  top: 0; right: 0;
+  border-right: 1px solid rgb(28, 31, 30);
+  border-top: 1px solid rgb(28, 31, 30);
+}
+.preloader {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #070707;
+    z-index: 100000000000000000000;
+}
+.preloader:before {
+    content: 'Loading';
+    position: absolute;
+    font-size: 12em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .03);
+}
+.preloader.active {
+    transform: translateY(-100vh);
+    transition: ease-in-out 2s;
+    transition-delay: 1s;
+}
+.counter {
+    position: relative;
+    color: #fff;
+    font-size: 16em;
+    font-weight: 700;
+    z-index: 1;
+}
+.counter:after {
+    content: '%';
+    font-size: 0.5em;
+}
+.hide {
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+}
+
+        /* Styling untuk section */
+        .background-video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+
+        /* Styling untuk video latar belakang */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Styling untuk teks */
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .title {
+            font-family: 'Blanka', sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Styling untuk tombol */
+        .button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="preloader">
+        <div class="counter">0</div>
+    </div>
+    <section>
+       <section class="background-video-section">
+        <!-- Video latar belakang -->
+        <video class="background-video" autoplay muted loop>
+            <source src="./video/bgMov1.crdownload" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Teks -->
+        <div class="text-container">
+            <h1 class="title">One Problem With Many Solution</h1>
+            <h2 class="subtitle">Bekerjasama Dengan Kecerdasan Buatan dalam Memajukan Masa Depan</h2>
+            <a href="#"> <button class="btn btn-3 hover-border-2">
+    <span>Get In Touch</span>
+  </button></a>
+        </div>
+        </section>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        function counter() {
+            var count = setInterval(function(){
+                var c = parseInt($('.counter').text());
+                $('.counter').text((c += 2).toString());
+                if (c == 100) {
+                    clearInterval(count);
+                    $('.counter').addClass('hide');
+                    // tambahna kene
+                    $('.preloader').addClass('active');
+                }
+            },30)
+        }
+        counter ()
+    </script>
+  </body>
+</html>
